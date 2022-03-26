@@ -8,7 +8,11 @@
             <Entry Text="{Binding Valor2 }"></Entry>
             <Button Text="Sumar" Command="{Binding Sumar}" />
             <Label Text="{Binding ResultadoSuma}" FontSize="Large" FontAttributes="Bold"></Label>
-
+            <Button Text="Restar" Command="{Binding Restar}" />
+            <Label Text="{Binding ResultadoResta}" FontSize="Large" FontAttributes="Bold"></Label>
+            <Button Text="5" Command="{Binding Concatenar}" CommandParameter="5" />
+            <Button Text="6" Command="{Binding Concatenar}" CommandParameter="6" />
+            <Label Text="{Binding ResultadoConcatenar}" FontSize="Large" FontAttributes="Bold"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

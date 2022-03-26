@@ -52,20 +52,62 @@ namespace MVVMSapiens.ViewModels
                 }
             }
         }
+        string resultadoConcatenar;
+        public string ResultadoConcatenar
+        {
+            get { return resultadoConcatenar; }
+            set
+            {
+                if (resultadoConcatenar != value)
+                {
+                    resultadoConcatenar = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        int resultadoResta;
+        public int ResultadoResta
+        {
+            get { return resultadoResta; }
+            set
+            {
+                if (resultadoResta != value)
+                {
+                    resultadoResta = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         #endregion
 
         #region Comandos
         public ICommand Sumar { protected set; get; }
+        public ICommand Restar { protected set; get; }
+        public ICommand Concatenar { protected set; get; }
+
+
         #endregion
 
 
         public OperationsViewModel()
         {
             Sumar = new Command(() =>
-            {                
+            {
                 ResultadoSuma = Valor1 + Valor2;
             });
-        }
 
+            Restar = new Command(() =>
+            {
+                ResultadoResta = Valor1 - Valor2;
+            });
+
+            Concatenar = new Command<string>(
+              execute: (string parameter) =>
+              {
+                  ResultadoConcatenar = string.Concat(ResultadoConcatenar, parameter);
+              }
+              );
+        }
     }
 }
