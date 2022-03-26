@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMSapiens.Views.Operations">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry  Text="{Binding Valor1}" ></Entry>
+            <Entry Text="{Binding Valor2 }"></Entry>
+            <Button Text="Sumar" Command="{Binding Sumar}" />
+            <Label Text="{Binding ResultadoSuma}" FontSize="Large" FontAttributes="Bold"></Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
